@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "location": "Janpath",
+    "restaurantName": "Spice Kitchen",
+    "description": "Spice Kitchen is a fine dining restaurant offering a blend of traditional and contemporary Indian cuisine. Located in the heart of Janpath, it promises a culinary experience like no other.",
+    "image": "https://wallpapercave.com/wp/wp1874162.jpg"
+  },
+  {
+    "id": 2,
+    "location": "Connaught Place",
+    "restaurantName": "Sky Lounge",
+    "description": "Sky Lounge is a rooftop restaurant offering panoramic views of Connaught Place. Enjoy a selection of global cuisines and signature cocktails in a stylish and sophisticated setting.",
+    "image": "https://dimg.visitscotland.com/wsimgs/B1ECB78057472FE3F4FDC9CDC90EC02465C148CE.jpg"
+  },
+  {
+    "id": 3,
+    "location": "Delhi",
+    "restaurantName": "Royal Feast",
+    "description": "Royal Feast is a luxurious dining destination known for its exquisite ambiance and delectable multi-cuisine offerings. Indulge in a culinary journey fit for royalty.",
+    "image": "https://wallpaperaccess.com/full/3014785.jpg"
+  },
+  {
+    "id": 4,
+    "location": "Chanakyapuri",
+    "restaurantName": "Chilli Fusion",
+    "description": "Chilli Fusion offers a fusion of Indian and Chinese flavors in a contemporary setting. Experience bold and vibrant dishes prepared with the freshest ingredients.",
+    "image": "https://media.timeout.com/images/105239239/image.jpg"
+  },
+  {
+    "id": 5,
+    "location": "Janpath",
+    "restaurantName": "Green Garden",
+    "description": "Green Garden offers a serene dining experience amidst lush greenery. Savor fresh and flavorful dishes inspired by nature's bounty.",
+    "image": "https://www.itl.cat/pngfile/big/194-1948367_restaurant.jpg"
+  },
+  {
+    "id": 6,
+    "location": "Chanakyapuri",
+    "restaurantName": "Golden Gate",
+    "description": "Golden Gate is a family-friendly restaurant known for its warm hospitality and diverse menu. Enjoy a delightful culinary experience with your loved ones.",
+    "image": "https://wallpapercave.com/wp/wp1874165.jpg"
+  },
+  {
+    "id": 7,
+    "location": "Green Park",
+    "restaurantName": "Sunset Bistro",
+    "description": "Sunset Bistro offers a charming outdoor dining experience with a view of the setting sun. Relish a variety of gourmet dishes crafted with passion and creativity.",
+    "image": "https://www.liveenhanced.com/wp-content/uploads/2018/01/Meraki.jpg"
+  },
+  {
+    "id": 8,
+    "location": "Vasant Vihar",
+    "restaurantName": "Spring Blossom",
+    "description": "Spring Blossom is a hidden gem in Vasant Vihar, offering a delightful fusion of Asian flavors. Immerse yourself in a culinary journey filled with freshness and creativity.",
+    "image": "https://www.silvea-architecte.fr/wp-content/uploads/2019/02/LINK-BANGKOK-12-1.jpg"
+  },
+  {
+    "id": 9,
+    "location": "Dhaula Kuan",
+    "restaurantName": "Flavors of India",
+    "description": "Flavors of India is a celebration of authentic Indian cuisine, featuring a diverse array of regional specialties. Experience the rich and vibrant flavors of India.",
+    "image": "https://cityhotels.ge/modules/restaurants/uploads/jpg/step_1/102.jpg"
+  },
+  {
+    "id": 10,
+    "location": "New Delhi",
+    "restaurantName": "Leela's Delight",
+    "description": "Leela's Delight is an elegant dining destination offering a curated menu of international delicacies. Indulge in a luxurious dining experience at Leela's.",
+    "image": "https://www.birchrestaurant.com/wp-content/uploads/2022/03/Best-Restaurants-in-Davenport-IA.jpg"
+  },
+  {
+    "id": 11,
+    "location": "Dhaula Kuan",
+    "restaurantName": "Taste of Punjab",
+    "description": "Taste of Punjab is a culinary journey through the flavors of North India. Savor authentic Punjabi cuisine in a vibrant and welcoming ambiance.",
+    "image": "https://www.goodfreephotos.com/albums/thailand/bangkok/restaurant-in-bangkok-thailand.jpg"
+  },
+  {
+    "id": 12,
+    "location": "New Delhi",
+    "restaurantName": "Mughal Palace",
+    "description": "Mughal Palace offers a regal dining experience reminiscent of the grandeur of the Mughal era. Explore a menu of royal delicacies fit for kings and queens.",
+    "image": "https://www.goodfreephotos.com/albums/thailand/bangkok/restaurant-in-bangkok-thailand.jpg"
+  }
+]
