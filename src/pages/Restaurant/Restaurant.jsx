@@ -2,7 +2,7 @@ import { Button, Skeleton } from "antd";
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-const Hotel = ({ data, setInputValue }) => {
+const Restaurant = ({ data, setInputValue }) => {
   const hotelId = useParams();
 
   const dataHotel = data.find((item) => item.id == hotelId.id);
@@ -43,9 +43,7 @@ const Hotel = ({ data, setInputValue }) => {
       }}
     >
       <div style={{ width: "10%" }}>
-        <Link to="/">
-          <Button block>Back</Button>
-        </Link>
+        
       </div>
       {data ? (
         <div
@@ -92,8 +90,21 @@ const Hotel = ({ data, setInputValue }) => {
       ) : (
         <Skeleton />
       )}
+      <Link to="/">
+          <Button  style={{
+                
+                backgroundColor: 'blue',
+                color: 'white',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                textTransform: 'uppercase',
+            }}>Back</Button>
+        </Link>
     </div>
   );
 };
 
-export default Hotel;
+export default Restaurant;

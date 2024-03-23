@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import myData from "./Data/myData.json";
+import Restaurant from "./pages/Restaurant/Restaurant";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -64,8 +65,8 @@ const App = () => {
             }
           />
           <Route
-            path="/hotel/:id"
-            element={<Hotel data={data} setInputValue={setInputValue} />}
+            path="/restaurant/:id"
+            element = {<Restaurant data={data} setInputValue={setInputValue}/>}
           />
         </Routes>
       
@@ -75,19 +76,4 @@ const App = () => {
 
 export default App;
 
-{
-  /* {login ? (
-  <Home />
-) : (
-  <Login
-    setNumber={setNumber}
-    pageValue={pageValue}
-    handleChangeStatus={handleChangeStatus}
-    number={number}
-    setOtp={setOtp}
-    otp={otp}
-    loginHandler={loginHandler}
-  />
-)}
- <Otp /> */
-}
+

@@ -18,17 +18,7 @@ const Home = ({
   }, []);
   return (
     <div className="main-container">
-      <div className="search-hotel">
-        <div className="input-style">
-          <Input
-            placeholder="search hotel on location base..."
-            onChange={(e) => setInputValue(e.target.value)}
-            value={inputValue}
-            style={{ width: "50%" }}
-          />
-          <Button onClick={handleLogout}>Logout</Button>
-        </div>
-      </div>
+      
       <div className="hotel-list">
         <Row
           gutter={10}
@@ -59,7 +49,7 @@ const Home = ({
                     }}
                     key={item.id}
                   >
-                    <Link to={`/hotel/${item.id}`}>
+                    <Link to={`/restaurant/${item.id}`}>
                       <div
                         style={{
                           display: "flex",

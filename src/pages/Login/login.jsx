@@ -1,9 +1,7 @@
 import React from "react";
 import "../../styles/home.css";
-import MyInput from "../../components/MyInput";
-import MyButon from "../../components/MyButon";
 
-const login = ({
+const Login = ({
   number,
   handleChangeStatus,
   setNumber,
@@ -12,40 +10,36 @@ const login = ({
   otp,
   loginHandler,
 }) => {
+  const handleInputChange = (e) => {
+    pageValue ? setOtp(e.target.value) : setNumber(e.target.value);
+  };
+
+  const handleButtonClick = () => {
+    pageValue ? loginHandler() : handleChangeStatus();
+  };
+
   return (
     <div className="mainLogin_container">
       <div className="login-div">
-        <MyInput
-          title={number.length != "10" ? "Enter Your Number" : "Send OTP"}
-          onChange={
-            pageValue
-              ? (e) => setOtp(e.target.value)
-              : (e) => setNumber(e.target.value)
-          }
+        <span>{number.length !== 10 ? "Enter Your Number" : "Send OTP"}</span>
+        <input
           value={pageValue ? otp : number}
-          placeholder={pageValue ? "Please Enter OTP" : "Enter Your Number"}
           type="number"
+          placeholder={pageValue ? "Please Enter OTP" : "Enter Your Number"}
+          onChange={handleInputChange}
         />
 
-        {pageValue ? (
-          <MyButon
-            title="Login"
-            style={{ background: otp.length == "6" ? "green" : "red" }}
-            onClick={loginHandler}
-            disabled={otp.length == "6" ? false : true}
-          />
-        ) : (
-          <MyButon
-            title={"Send Otp"}
-            style={{ background: number.length == "10" ? "green" : "red" }}
-            onClick={handleChangeStatus}
-            disabled={number.length == "10" ? false : true}
-          />
-        )}
+        <button
+          className="btn"
+          
+          onClick={handleButtonClick}
+          disabled={pageValue ? otp.length !== 6 : number.length !== 10}
+        >
+          {pageValue ? "Login" : "Send OTP"}
+        </button>
       </div>
     </div>
   );
-  // onClick={pageValue ? loginHandler : handleChangeStatus}
 };
 
-export default login;
+export default Login;
