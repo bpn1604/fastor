@@ -21,7 +21,7 @@ const Otp = () => {
   const [pin6, setPin6] = useState("");
 
   const toast = useToast();
-  const nav = useNavigate();
+  const navigate = useNavigate();
   
 
   const [response,setResponse] = useState([])
@@ -35,9 +35,9 @@ const Otp = () => {
         isClosable: true,
       });
     } else {
-      nav('/dashboard');
+      navigate('/dashboard');
     }
-    nav("/dashboard")
+    navigate("/dashboard")
     const payload = {
       phone: "9818979450",
       otp: pin1 + pin2 + pin3 + pin4 + pin5 + pin6,
@@ -54,83 +54,52 @@ const Otp = () => {
     }
   };
 
-  // const handleVerify = async () => {
-  //   if((pin1 + pin2 + pin3 + pin4 + pin5 + pin6) != "123456")
-  //   {
-  //       toast({
-  //           title: 'Invalid OTP',
-  //           description: "Please Enter Correct OTP",
-  //           status: 'error',
-  //           duration: 4000,
-  //           isClosable: true,
-  //         })
-  //   }
-  //   else{
-  //       nav('/dashboard')
-  //   }
-
-    
-    
-  //   const payload = {
-  //       phone : "9818979450",
-  //       otp : pin1 + pin2 + pin3 + pin4 + pin5 + pin6,
-  //       dial_code : "+91"
-  //   }
-  //   await axios.post('https://staging.fastor.in/v1/pwa/user/login',payload).then((res) => setResponse(res.data)).catch((err) => console.log(err));
-
-  //   // localStorage.setItem("FastorToken",JSON.stringify(response.data))
-    
-  //   localStorage.setItem("FastorToken",response.data.token? response.data.token : null);
-
-    
-    
-
-
-    
-  // };
-
-//   console.log(response.data.token)
+ 
 
   return (
-    <Box padding={"30px"}>
-      <Box paddingTop={"10%"} textAlign="left">
-        <Text fontSize="2xl" as="b">
-          OTP Verification
-        </Text>
-        <Text color="grey">
-          Enter the verification code we just sent on your Mobile Number.{" "}
-        </Text>
-      </Box>
+    <Box padding={"30px"} display="flex" flexDirection="column" alignItems="center">
+  <Box paddingTop={"10%"} textAlign="center" marginBottom="30px">
+    <Text fontSize="2xl" as="b">
+      OTP Verification
+    </Text>
+    <Text color="grey" marginTop="10px">
+      Enter the verification code we just sent to your Mobile Number.
+    </Text>
+  </Box>
 
-      <Box textAlign="center" paddingTop={"30px"}>
-        <HStack>
-          <PinInput>
-            <PinInputField onChange={(e) => setPin1(e.target.value)} />
-            <PinInputField onChange={(e) => setPin2(e.target.value)} />
-            <PinInputField onChange={(e) => setPin3(e.target.value)} />
-            <PinInputField onChange={(e) => setPin4(e.target.value)} />
-            <PinInputField onChange={(e) => setPin5(e.target.value)} />
-            <PinInputField onChange={(e) => setPin6(e.target.value)} />
-          </PinInput>
-        </HStack>
-      </Box>
+  <Box textAlign="center">
+    <HStack spacing="10px">
+      <PinInput>
+        <PinInputField onChange={(e) => setPin1(e.target.value)} />
+        <PinInputField onChange={(e) => setPin2(e.target.value)} />
+        <PinInputField onChange={(e) => setPin3(e.target.value)} />
+        <PinInputField onChange={(e) => setPin4(e.target.value)} />
+        <PinInputField onChange={(e) => setPin5(e.target.value)} />
+        <PinInputField onChange={(e) => setPin6(e.target.value)} />
+      </PinInput>
+    </HStack>
+  </Box>
 
-      <Box textAlign="left" marginTop={"30px"}>
-        <Button
-          size="lg"
-          width={"50%"}
-          background={"#ff7878"}
-          color="white"
-          onClick={handleVerify}
-        >
-          Verify
-        </Button>
-      </Box>
-      <Text marginTop={"40px"}>Didn't recieved code</Text>
-      <Text color={"blue"}>
-        <Link to="/">Resend</Link>
-      </Text>
-    </Box>
+  <Box textAlign="center" marginTop={"30px"}>
+    <Button
+      size="lg"
+      width={"70%"}
+      background={"blue"}
+      color="white"
+      onClick={handleVerify}
+    >
+      Verify
+    </Button>
+  </Box>
+  
+  <Box textAlign="center" marginTop={"20px"}>
+    <Text>Didn't receive the code?</Text>
+    <Text color={"blue"} marginTop={"5px"}>
+      <Link to="/">Resend</Link>
+    </Text>
+  </Box>
+</Box>
+
   );
 };
 

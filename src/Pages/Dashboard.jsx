@@ -1,11 +1,11 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Cardd from '../Components/Card';
 
 const Dashboard = () => {
-    const nav = useNavigate();
+    const navigate = useNavigate();
     const token = localStorage.getItem("FastorToken");
     console.log(token,'token')
     const [data, setData] = useState([]);
@@ -13,7 +13,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         if (!token || token === null || token === undefined) {
-            nav('/');
+            navigate('/');
         } else {
             const auth = {
                 headers: {
@@ -31,16 +31,19 @@ const Dashboard = () => {
                     setError(err); // Set error state for rendering error message
                 });
         }
-    }, [nav, token]);
+    }, [navigate, token]);
 
     return (
         <Box padding={"20px"}>
             {error && <div>Failed to fetch restaurant data: {error.message}</div>}
+            <Flex flexWrap="wrap" box-shadow= "rgba(0, 0, 0, 0.24) 0px 3px 8px">
             {data.map((item) => (
-                <div key={item.restaurant_id}>
-                    <Cardd {...item} />
+                <div key={item.restaurant_id} style={{ flex: "1 0 30%", maxWidth: "30%" }}>
+                <Cardd {...item} />
                 </div>
             ))}
+</Flex>
+
         </Box>
     );
 }

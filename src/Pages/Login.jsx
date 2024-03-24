@@ -4,9 +4,9 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@chakra-ui/react'
 
-const Mobile = () => {
+const Login = () => {
     const [mobile, setMobile] = useState("");
-    const nav = useNavigate();
+    const navigate = useNavigate();
     const toast = useToast()
 
     const handleSubmit = () => {
@@ -20,22 +20,22 @@ const Mobile = () => {
             duration: 4000,
             isClosable: true,
           })
-        nav('/otp')
+        navigate('/otp')
     }
   return (
-    <Box>
-        <Box paddingTop={"10%"} >
+    <Box >
+        <Box paddingTop={"10%"} box-shadow= "rgba(0, 0, 0, 0.24) 0px 3px 8px">
             <Text fontSize='2xl' as='b' >Enter Your Mobile Number</Text>
             <Text color='grey'>We will send you the 6 digits verification code </Text>
         </Box>
         <Box  textAlign="center" paddingTop={"30px"}>
-            <Input size='md' width={"40%"} placeholder="Enter your Mobile Number" type={"number"} onChange={(e) => setMobile(e.target.value)}/>
+            <Input size='sm' width={"30%"} placeholder="Enter your Mobile Number" type={"number"} onChange={(e) => setMobile(e.target.value)}/>
             <Box paddingTop={"30px"}>
-            <Button background={'#ff7878'} color="white" onClick={handleSubmit}>Send Code</Button>
+            <Button background={'#325689'} color="white" onClick={handleSubmit}>Send Code</Button>
             </Box>
         </Box>
     </Box>
   )
 }
 
-export default Mobile
+export default Login

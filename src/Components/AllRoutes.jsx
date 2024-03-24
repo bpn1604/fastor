@@ -1,14 +1,15 @@
 import React from 'react';
 import { Route,Routes } from 'react-router-dom';
 import Dashboard from '../Pages/Dashboard';
-import Mobile from '../Pages/Mobile';
+
 import Otp from '../Pages/Otp';
 import Single from '../Pages/Single';
+import Login from '../Pages/Login';
 
 const AllRoutes = () => {
   return (
     <Routes>
-        <Route path='/' element={<Mobile/>} />
+        <Route path='/' element={<Login/>} />
         <Route path='/otp' element={<Otp/>} />
         <Route path='/dashboard' element = {<Dashboard/>} />
         <Route path='/single' element = {<Single/>} />

@@ -1,58 +1,62 @@
 import React from "react";
-import { Card , CardHeader, CardBody, CardFooter, Image,Stack,Heading,Text,Button } from '@chakra-ui/react'
+import { Card , CardHeader, CardBody, CardFooter, Image,Stack,Heading,Text,Button ,Flex,Box} from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom";
 
 const Cardd = (props) => {
-    const nav = useNavigate();
+  console.log(props.images)
+    const navigate = useNavigate();
 
     // console.log(props)
     const handleClick = () => {
         localStorage.setItem("fastor-single",JSON.stringify(props))
-        nav('/single')
+        navigate('/single')
         
     }
   return (
-    <Card
-      direction={{ base: "column", sm: "row" }}
-      overflow="hidden"
-      variant="outline"
+    <Flex
+    direction={{ base: "row", sm: "row" }}
+    overflow="hidden"
+    variant="outline"
+    padding={"20px"}
+    margin="10px"
+    onClick={handleClick}
+    _hover={{ boxShadow: "xl", transform: "scale(1.02)" }} 
+  >
+    <Box
       padding={"20px"}
-      margin="10px"
+      boxShadow="md" 
+      borderRadius="md" 
       onClick={handleClick}
+      _hover={{ boxShadow: "xl" }} 
+      transition="box-shadow 0.3s ease-in-out" 
+      flex="1" 
+      marginRight={{ base: 0, sm: "10px" }} 
     >
       <Image
         objectFit="cover"
-        maxW={{ base: "100%", sm: "200px" }}
+        maxW="100%"
+        h="200px" // Height of the image
         src={props.images[0].url}
-        alt="Caffe Latte"
+        alt={props.restaurant_name}
+        borderRadius="md" // Rounded corners for the image
+        mb={3} // Margin bottom for spacing
       />
 
-      <Stack>
-        <CardBody>
-          <Heading size="md">{props.restaurant_name}</Heading>
+      <Stack spacing={2}>
+        <Heading size="md">{props.restaurant_name}</Heading>
 
-          <Text py="2">
-            {
-                `Rating : ${props.rating.restaurant_avg_rating}`
-            }
-          </Text>
-          <Text py="2">
-            {
-                `Cost for Two : $ ${props.avg_cost_for_two}`
-            }
-          </Text>
-          <Text py="2">
-            {
-                `Opens at : ${props.opens_at},Closed at : ${props.closes_at}`
-            }
-          </Text>
-        </CardBody>
-
-        <CardFooter>
-          
-        </CardFooter>
+        <Text fontSize="md" color="gray.600">
+          {`Rating: ${props.rating.restaurant_avg_rating}`}
+        </Text>
+        <Text fontSize="md" color="gray.600">
+          {`Cost for Two: $${props.avg_cost_for_two}`}
+        </Text>
+        <Text fontSize="md" color="gray.600">
+          {`Opens at: ${props.opens_at}, Closes at: ${props.closes_at}`}
+        </Text>
       </Stack>
-    </Card>
+    </Box>
+  </Flex>
   );
 };
 
